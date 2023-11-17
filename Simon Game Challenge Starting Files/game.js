@@ -6,6 +6,32 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
+
+
+// window.addEventListener("resize", () => {
+    // console.log("Resized");
+//     if (window.innerWidth < 450) {
+    // console.log('Working');
+//       document.querySelector("#level-title").innerText = "Touch Screen To Start";
+//     } else {
+//       document.querySelector("#level-title").innerText = "Press A Key to Start";
+//     }
+//  });
+
+$(document).ready(function() {
+    window.addEventListener("resize", () => {
+      console.log("Resize event triggered");
+      if (window.innerWidth <  500) {
+        console.log('Working');
+        $("#level-title").text("Touch Screen To Start");
+      } else {
+        $("#level-title").text("Press A Key to Start");
+      }
+    });
+  });
+  
+  
+
 $(document).keypress(function(){ 
     if (!started) {
         $("#level-title").text("Level " + level);
