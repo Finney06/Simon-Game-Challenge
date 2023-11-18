@@ -6,39 +6,30 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-
-
-// window.addEventListener("resize", () => {
-    // console.log("Resized");
-//     if (window.innerWidth < 450) {
-    // console.log('Working');
-//       document.querySelector("#level-title").innerText = "Touch Screen To Start";
-//     } else {
-//       document.querySelector("#level-title").innerText = "Press A Key to Start";
-//     }
-//  });
-
-$(document).ready(function() {
-    window.addEventListener("resize", () => {
-      console.log("Resize event triggered");
-      if (window.innerWidth <  500) {
-        console.log('Working');
-        $("#level-title").text("Touch Screen To Start");
-      } else {
-        $("#level-title").text("Press A Key to Start");
-      }
-    });
-  });
-  
-  
-
-$(document).keypress(function(){ 
+$(document).keypress(function () {
     if (!started) {
-        $("#level-title").text("Level " + level);
-        nextSequence();
-        started = true;
+        startGame();
     }
 });
+
+$(document).on('touchstart', function () {
+    if (!started) {
+        startGame();
+    }
+});
+
+function startGame() {
+    $(".level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+}
+// $(document).keypress(function(){ 
+//     if (!started) {
+//         $(".level-title").text("Level " + level);
+//         nextSequence();
+//         started = true;
+//     }
+// });
 
 $(".btn").click(function() {
     var userChosenColour = $(this).attr("id");
@@ -83,7 +74,7 @@ function nextSequence() {
 
     userClickedPattern = [];
     level++;
-    $("#level-title").text("Level " + level);
+    $(".level-title").text("Level " + level);
     
     var randomNumber = Math.floor(Math.random() * 3) + 1;
     var randomChosenColour = buttonColours[randomNumber];

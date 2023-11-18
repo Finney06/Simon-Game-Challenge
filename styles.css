@@ -3,7 +3,7 @@ body {
   background-color: #011F3F;
 }
 
-#level-title {
+.level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;
@@ -51,3 +51,28 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+
+}
+
+
+
+/* @media screen and (min-width: 501px) {
+    #lev::before {
+        content: "Larger Screen Text";
+    }
+} */
