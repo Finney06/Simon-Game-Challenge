@@ -23,13 +23,6 @@ function startGame() {
     nextSequence();
     started = true;
 }
-// $(document).keypress(function(){ 
-//     if (!started) {
-//         $(".level-title").text("Level " + level);
-//         nextSequence();
-//         started = true;
-//     }
-// });
 
 $(".btn").click(function() {
     var userChosenColour = $(this).attr("id");
@@ -62,8 +55,8 @@ function checkAnswer(currentLevel) {
         }
         ,200);
 
-     $(".desktop").text("Game Over, Press Any Key to Restart");
-     $(".mobile").text("Game Over, Touch the screen to Restart");
+     $("#desktop").text("Game Over, Press Any Key to Restart");
+     $("#mobile").text("Game Over, Touch the screen to Restart");
         startOver();
 
       }

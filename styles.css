@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-  margin: 20px auto;
+  margin: 30px auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   justify-content: center;
@@ -60,7 +60,7 @@ body {
   background-color: grey;
 }
 
-.mobile {
+#mobile {
   display: none;
 }
 
@@ -69,11 +69,15 @@ body {
     font-size: 1.5rem;
   }
 
-  .desktop {
+  #desktop {
     display: none;
   }
 
-  .mobile {
+  #mobile {
     display: block;
+  }
+
+  .container {
+    margin-top: 50px;
   }
 }
