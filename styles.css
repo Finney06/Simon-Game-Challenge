@@ -6,38 +6,31 @@
 
 body {
   text-align: center;
-  background-color: #011F3F;
+  background-color: #011f3f;
+  min-width: 480px;
 }
 
 .level-title {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin:  5%;
-  color: #FEF2BF;
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  margin: 20px auto;
+  text-align: center;
+  color: #fef2bf;
 }
 
 .container {
-  /* display: block;
-  width: 50%;
-  margin: auto; */
-
-  /* margin: 0 auto;
-    display: flex;
-    justify-content: center; */
-
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    width: 480px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 480px;
 }
-
 
 .btn {
   margin: 20px;
-  /* display: inline-block; */
   height: 200px;
-  width: 200px;
+  max-width: 200px;
   border: 10px solid black;
   border-radius: 20%;
 }
@@ -73,22 +66,16 @@ body {
 }
 
 @media (max-width: 480px) {
+  .level-title {
+    font-size: 1.5rem;
+  }
+
   .desktop {
     display: none;
   }
 
   .mobile {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
-
-
 }
-
-
-
-/* @media screen and (min-width: 501px) {
-    #lev::before {
-        content: "Larger Screen Text";
-    }
-} */
