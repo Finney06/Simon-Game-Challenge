@@ -105,5 +105,5 @@ function startOver() {
      level = 0;
      gamePattern = [];
      started = false;
-    console.log (level + gamePattern + started);
+    console.log (level + + gamePattern + started);
 }
