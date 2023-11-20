@@ -6,23 +6,36 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).keypress(function () {
-    if (!started) {
-        startGame();
-    }
-});
 
-$(document).on('touchstart', function () {
-    if (!started) {
-        startGame();
+function checkScreenSize() { 
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    if (screenWidth > 481) {
+        console.log("Desktop view");
+        $(document).keypress(function () {
+            if (!started) {
+                startGame();
+            }
+        });
+    } else {
+        console.log("Mobile view");
+        $(document).on('touchstart', function () {
+            if (!started) {
+                startGame();
+            }
+        });
     }
-});
+};
+
+window.addEventListener('load', checkScreenSize);
+window.addEventListener('resize', checkScreenSize); 
 
 function startGame() {
     $(".level-title").text("Level " + level);
     nextSequence();
     started = true;
 }
+
 
 $(".btn").click(function() {
     var userChosenColour = $(this).attr("id");
@@ -100,3 +113,32 @@ function startOver() {
      started = false;
     console.log (level + + gamePattern + started);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $(document).ready(function () {
+//     // Show the popup when the page is loaded
+//     $("#popup").show();
+  
+//     // Start the game when the "Start" button is clicked
+//     $("#startButton").click(function () {
+//       $("#popup").hide();
+//       startGame();
+//     });
+  
+//     // Your existing game logic goes here
+//     function startGame() {
+//       // ...
+//     }
+//   });
+  
