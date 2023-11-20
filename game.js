@@ -12,21 +12,22 @@ function checkScreenSize() {
 
     if (screenWidth > 481) {
         console.log("Desktop view");
-        $(document).keypress(function () {
-            if (!started) {
-                startGame();
-            }
-        });
+ 
     } else {
         console.log("Mobile view");
-        $(document).on('touchstart', function () {
-            if (!started) {
-                startGame();
-            }
-        });
+       
     }
 };
-
+$(document).keypress(function () {
+    if (!started) {
+        startGame();
+    }
+});
+$(document).on('touchstart', function () {
+    if (!started) {
+        startGame();
+    }
+});
 window.addEventListener('load', checkScreenSize);
 window.addEventListener('resize', checkScreenSize); 
 
