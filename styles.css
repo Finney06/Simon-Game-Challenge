@@ -10,7 +10,7 @@ body {
   min-width: 480px;
 }
 
-.level-title {
+#level-title {
   font-family: "Press Start 2P", cursive;
   font-size: 3rem;
   margin: 35px auto;
@@ -60,21 +60,10 @@ body {
   background-color: grey;
 }
 
-#mobile {
-  display: none;
-}
 
 @media (max-width: 480px) {
-  .level-title {
+  #level-title {
     font-size: 1.5rem;
-  }
-
-  #desktop {
-    display: none;
-  }
-
-  #mobile {
-    display: block;
   }
 
   .container {
