@@ -1,5 +1,3 @@
-// Code Snippet 2 with Comments from Code Snippet 1
-
 // Array of button colors
 var buttonColours = ["red", "blue", "green", "yellow"];
 
